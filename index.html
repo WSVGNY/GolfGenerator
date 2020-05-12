@@ -14,11 +14,13 @@
         .generate-button {
             width: 140px;
             margin-bottom: 12px;
+
+            
         }
     </style>
 </head>
 
-<body onload="setDPI(document.getElementById('myCanvas'), 288)" , class="container">
+<body class="container">
     <h1>Golf course generator!</h1>
     <button onclick="draw()" class="generate-button"> Generate new course </button>
     <canvas id="myCanvas" width=800" height="800" style="border:1px solid #000000;"></canvas>
