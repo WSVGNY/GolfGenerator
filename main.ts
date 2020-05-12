@@ -1,14 +1,14 @@
 enum Ground { HOLE, GREEN, FAIRWAY, ROUGH, FOREST, FLAG_BASE, FLAG }
 
 class Point2D {
-    public x;
-    public y;
+    public x: number;
+    public y: number;
     constructor(x: number, y: number) { this.x = x; this.y = y; }
 }
 
 class Vector2D {
-    public x;
-    public y;
+    public x: number;
+    public y: number;
     constructor(x: number, y: number) { this.x = x; this.y = y; }
 
     public normalise(): void {
@@ -44,9 +44,9 @@ class Course {
     }
 
     private initializeArray(): void {
-        for (var i: number = 0; i < this.height; i++) {
+        for (let i: number = 0; i < this.height; i++) {
             this.terrain[i] = [];
-            for (var j: number = 0; j < this.width; j++) {
+            for (let j: number = 0; j < this.width; j++) {
                 this.terrain[i][j] = null;
             }
         }
@@ -55,6 +55,7 @@ class Course {
     private generateBasePath(): Point2D[] {
         const hBound: number = 24
         const vBound: number = 12
+
         const path: Point2D[] = []
         path.push(new Point2D(this.getRandomInt(hBound, this.width - hBound), vBound))
         let lastMove: Point2D;
@@ -215,7 +216,7 @@ class Course {
     }
 }
 
-// OneLoneCoder.com - Splines Part 1, Modified from original c++ code.
+// OneLoneCoder @ Github [https://github.com/OneLoneCoder/videos/blob/master/OneLoneCoder_Splines1.cpp]
 class Spline {
     public points: Point2D[] = []
 
@@ -253,13 +254,13 @@ class Spline {
 }
 
 function draw(): void {
-    var canvas: HTMLCanvasElement = document.getElementById("myCanvas") as HTMLCanvasElement;
+    const canvas: HTMLCanvasElement = document.getElementById("myCanvas") as HTMLCanvasElement;
     clearCanvas(canvas);
     const course: Course = new Course();
 
     for (let i = 0; i < course.height; i++) {
         for (let j = 0; j < course.width; j++) {
-            var ctx = canvas.getContext("2d");
+            const ctx = canvas.getContext("2d");
             ctx.font = "lighter 16px serif";
             if (course.terrain[i][j] == Ground.FAIRWAY) {
                 ctx.fillText("-", 9 + j * 10, 17 + i * 10);
