@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Golf!</title>
+    <script src='./out/main.js'></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .generate-button {
+            width: 140px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body onload="setDPI(document.getElementById('myCanvas'), 288)" , class="container">
+    <h1>Golf course generator!</h1>
+    <button onclick="draw()" class="generate-button"> Generate new course </button>
+    <canvas id="myCanvas" width=800" height="800" style="border:1px solid #000000;"></canvas>
+    <h3>William Sevigny, 2020</h3>
+</body>
+
+</html>

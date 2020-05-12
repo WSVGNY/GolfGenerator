@@ -1,0 +1,13 @@
+{
+  "name": "golf",
+  "version": "0.0.1",
+  "description": "Golf course generator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch main.ts --exec 'tsc --outDir out' main.ts"
+  },
+  "author": "William Sevigny",
+  "license": "ISC",
+  "dependencies": {}
+}
