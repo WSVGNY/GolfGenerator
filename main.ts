@@ -265,7 +265,7 @@ function draw(): void {
             if (course.terrain[i][j] == Ground.FAIRWAY) {
                 ctx.fillText("-", 9 + j * 10, 17 + i * 10);
             } else if (course.terrain[i][j] == Ground.GREEN) {
-                ctx.fillText("_", 7 + j * 10, 15 + i * 10);
+                ctx.fillText(" ", 7 + j * 10, 15 + i * 10);
             } else if (course.terrain[i][j] == Ground.HOLE) {
                 ctx.fillText("o", 7 + j * 10, 19 + i * 10);
             } else if (course.terrain[i][j] == Ground.ROUGH) {
