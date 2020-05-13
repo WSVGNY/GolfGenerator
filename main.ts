@@ -36,6 +36,7 @@ class Course {
         this.fill(fairway, Ground.FAIRWAY);
 
         this.generateGreen(basePath[basePath.length - 1], 4)
+        this.terrain[basePath[basePath.length - 1].y][basePath[basePath.length - 1].x] = Ground.FAIRWAY
         this.generateGreen(basePath[0], 6)
         this.terrain[basePath[0].y][basePath[0].x] = Ground.HOLE
         this.terrain[basePath[0].y - 1][basePath[0].x] = Ground.FLAG_BASE

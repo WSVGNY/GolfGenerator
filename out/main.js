@@ -41,6 +41,7 @@ var Course = /** @class */ (function () {
         this.fill(rough, Ground.ROUGH);
         this.fill(fairway, Ground.FAIRWAY);
         this.generateGreen(basePath[basePath.length - 1], 4);
+        this.terrain[basePath[basePath.length - 1].y][basePath[basePath.length - 1].x] = Ground.FAIRWAY;
         this.generateGreen(basePath[0], 6);
         this.terrain[basePath[0].y][basePath[0].x] = Ground.HOLE;
         this.terrain[basePath[0].y - 1][basePath[0].x] = Ground.FLAG_BASE;
@@ -192,7 +193,7 @@ var Course = /** @class */ (function () {
     };
     return Course;
 }());
-// OneLoneCoder.com - Splines Part 1, Modified from original c++ code.
+// OneLoneCoder @ Github [https://github.com/OneLoneCoder/videos/blob/master/OneLoneCoder_Splines1.cpp]
 var Spline = /** @class */ (function () {
     function Spline() {
         this.points = [];
@@ -236,7 +237,7 @@ function draw() {
                 ctx.fillText("-", 9 + j * 10, 17 + i * 10);
             }
             else if (course.terrain[i][j] == Ground.GREEN) {
-                ctx.fillText("_", 7 + j * 10, 15 + i * 10);
+                ctx.fillText(" ", 7 + j * 10, 15 + i * 10);
             }
             else if (course.terrain[i][j] == Ground.HOLE) {
                 ctx.fillText("o", 7 + j * 10, 19 + i * 10);
