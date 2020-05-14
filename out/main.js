@@ -58,11 +58,12 @@ var Course = /** @class */ (function () {
     };
     Course.prototype.generateBasePath = function () {
         var hBound = 24;
-        var vBound = 12;
+        var upperBound = this.getRandomInt(12, 18);
+        var lowerBound = this.getRandomInt(12, 18);
         var path = [];
-        path.push(new Point2D(this.getRandomInt(hBound, this.width - hBound), vBound));
+        path.push(new Point2D(this.getRandomInt(hBound, this.width - hBound), upperBound));
         var lastMove;
-        while (path[path.length - 1].y < this.height - vBound) {
+        while (path[path.length - 1].y < this.height - lowerBound) {
             var moves = [new Point2D(-2, 2), new Point2D(0, 1), new Point2D(2, 2)];
             var move = void 0;
             if (path[path.length - 1].x < hBound)
