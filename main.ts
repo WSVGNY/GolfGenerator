@@ -55,13 +55,14 @@ class Course {
 
     private generateBasePath(): Point2D[] {
         const hBound: number = 24
-        const vBound: number = 12
+        const upperBound: number = this.getRandomInt(12, 18)
+        const lowerBound: number = this.getRandomInt(12, 18)
 
         const path: Point2D[] = []
-        path.push(new Point2D(this.getRandomInt(hBound, this.width - hBound), vBound))
+        path.push(new Point2D(this.getRandomInt(hBound, this.width - hBound), upperBound))
         let lastMove: Point2D;
 
-        while (path[path.length - 1].y < this.height - vBound) {
+        while (path[path.length - 1].y < this.height - lowerBound) {
             const moves: Point2D[] = [new Point2D(-2, 2), new Point2D(0, 1), new Point2D(2, 2)]
             let move: Point2D;
 
