@@ -3,4 +3,4 @@ ASCII golf course generator
 
 Check it out: https://wsvgny.github.io/GolfGenerator/
 
-![app](./screenshot.png)
+<img src="./screenshot.png" width="512"/>
